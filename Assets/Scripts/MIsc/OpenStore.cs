@@ -9,9 +9,21 @@ public class OpenStore : MonoBehaviour
 
     private bool playerIsNear;
 
+    public InputActionReference interactAction;
+
     private void Start()
     {
         storeText.SetActive(false); 
+    }
+
+    private void OnEnable()
+    {
+        interactAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        interactAction.action.Disable();
     }
     private void Update()
     {
@@ -21,17 +33,14 @@ public class OpenStore : MonoBehaviour
 
         storeText.SetActive(playerIsNear);
 
+        if (playerIsNear && interactAction.action.WasPressedThisFrame())
+        {
+            UIManager.instance.ToggleStore();
+        }
+
         if (!playerIsNear && UIManager.instance.isStoreOpen)
         {
             UIManager.instance.CloseStore();
-        }
-    }
-
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        if (playerIsNear)
-        {
-            UIManager.instance.ToggleStore();
         }
     }
 }

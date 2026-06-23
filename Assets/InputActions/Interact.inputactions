@@ -3,13 +3,13 @@
     "name": "Interact",
     "maps": [
         {
-            "name": "StoreInteract",
-            "id": "a2956536-86ba-4ac6-b61a-aae49d928203",
+            "name": "Store",
+            "id": "881c8ade-096b-45ad-9538-29922e5c8da5",
             "actions": [
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "48702780-71ff-4f5f-a524-f9a9595a11ba",
+                    "id": "0dd6acda-e829-4780-8584-a478850008c0",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
@@ -19,7 +19,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "d6d73da5-e39b-4f81-820d-7ba8582fde81",
+                    "id": "ea6e5bef-6e4a-4aa7-bd0d-0ef5b90dcaf8",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",

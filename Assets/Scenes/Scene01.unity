@@ -621,7 +621,6 @@ GameObject:
   - component: {fileID: 587233032}
   - component: {fileID: 587233031}
   - component: {fileID: 587233033}
-  - component: {fileID: 587233034}
   m_Layer: 0
   m_Name: Store
   m_TagString: Untagged
@@ -718,52 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OpenStore
   playerObj: {fileID: 1664769750}
   storeText: {fileID: 544119998}
---- !u!114 &587233034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587233030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: b3924746848f4604989bab6972465e9d, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 587233033}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 48702780-71ff-4f5f-a524-f9a9595a11ba
-    m_ActionName: 'StoreInteract/New action[/Keyboard/e]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: StoreInteract
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  interactAction: {fileID: -3565113332398919428, guid: b3924746848f4604989bab6972465e9d, type: 3}
 --- !u!4 &593182068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5602940509889174727, guid: db81431df5c147d49b8a24343ede0336, type: 3}

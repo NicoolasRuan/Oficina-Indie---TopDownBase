@@ -39,13 +39,10 @@ public class UIManager : MonoBehaviour
 
     public void ToggleStore()
     {
-        if(isStoreOpen)
-        {
+        if (isStoreOpen)
             CloseStore();
-        } else
-        {
+        else
             OpenStore();
-        }
     }
 
     public void OpenStore()
