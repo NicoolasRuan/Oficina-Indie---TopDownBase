@@ -14,7 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     EntityStats player_stats;
     PlayerBehavior player_inv_selection;
-    public int selected_slot = 0;
+    public int selected_slot = 1;
 
     // gold manager
     public int gold_count;
@@ -60,54 +60,77 @@ public class InventoryManager : MonoBehaviour
             Destroy(go);
         }
 
-        int hotkey = 0;
+        int hotkey = 1;
         foreach(Weapon weapon in inventory_)
         {
-            GameObject weapon_instance = Instantiate(inv_slot, inv_background.transform);
+            GameObject slot_instance = Instantiate(inv_slot, inv_background.transform);
             //GameObject.GetCompo<Image>().sprite = weapon.weapon_icon;
 
-            weapon_instance.transform.Find("Icon").GetComponent<Image>().sprite = weapon.weapon_icon;
-            weapon_instance.GetComponentInChildren<TextMeshProUGUI>().text = hotkey.ToString();
-            weapon_instance.GetComponent<Outline>().enabled = false;
-
-            if(selected_slot == hotkey)
+            if (weapon == null)
             {
-                weapon_instance.GetComponent<Outline>().enabled = true;
+                slot_instance.transform.Find("Icon").GetComponent<Image>().enabled = false;
+                // slot_instance.GetComponentInChildren<Image>().enabled = false;
+                slot_instance.GetComponent<Image>().enabled = true;
             }
+            else
+            {
+                //slot_instance.GetComponent<Image>().enabled = false;
+                slot_instance.transform.Find("Icon").GetComponent<Image>().enabled = true;
+
+                slot_instance.transform.Find("Icon").GetComponent<Image>().sprite = weapon.weapon_icon;
+                
+                slot_instance.GetComponent<Outline>().enabled = false;
+
+                if (selected_slot == hotkey)
+                {
+                    slot_instance.GetComponent<Outline>().enabled = true;
+                }
+
+            }
+
+            slot_instance.GetComponentInChildren<TextMeshProUGUI>().text = hotkey.ToString();
             hotkey++;
         }
     }
 
     void SelectedWeapon(int hot_key)
     {
+        if(hot_key < 1)
+            return;
         
-        Weapon weapon_selected = inventory_[hot_key];
-        player_stats.attack_damage = weapon_selected.weapon_damage;
-        player_stats.attack_speed = weapon_selected.weapon_speed;
-        player_stats.attack_range = weapon_selected.weapon_range;
-        player_stats.attack_cooldown = weapon_selected.weapon_cooldown;
+        Weapon weapon_selected;
+        //Debug.Log("Key: " + hot_key);
+        //Debug.Log("index: " + (hot_key - 1));
 
+        if (inventory_[hot_key - 1] != null)
+        {
+            weapon_selected = inventory_[hot_key - 1];
+
+            player_stats.attack_damage = weapon_selected.weapon_damage;
+            player_stats.attack_speed = weapon_selected.weapon_speed;
+            player_stats.attack_range = weapon_selected.weapon_range;
+            player_stats.attack_cooldown = weapon_selected.weapon_cooldown;
+        }
+        else
+        {
+            player_stats.attack_damage = 0;
+            player_stats.attack_speed = 0;
+            player_stats.attack_range = 0;
+            player_stats.attack_cooldown = 0;
+        }
         selected_slot = hot_key;
         RefreshInventory();
     }
 
     void InventorySelection()
     {
-        if(player_inv_selection._player_inv_selection == "0")
-        {
-            SelectedWeapon(0);
-        }
-
-        if (player_inv_selection._player_inv_selection == "1")
+        if(player_inv_selection.lastKey < 1)
         {
             SelectedWeapon(1);
-        }
-
-        if (player_inv_selection._player_inv_selection == "2")
+        } else
         {
-            SelectedWeapon(2);
+            SelectedWeapon(player_inv_selection.lastKey);
         }
-
     }
 
     public void AddGold(int g)

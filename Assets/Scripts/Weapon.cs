@@ -8,4 +8,6 @@ public class Weapon : ScriptableObject
     public float weapon_range;
     public float weapon_cooldown;
     public Sprite weapon_icon;
+    public string weapon_name;
+    public int weapon_price;
 }

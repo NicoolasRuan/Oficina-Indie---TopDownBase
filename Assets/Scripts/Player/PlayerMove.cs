@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         OnSlow();
+        Debug.Log(direction);
     }
 
     void FixedUpdate()

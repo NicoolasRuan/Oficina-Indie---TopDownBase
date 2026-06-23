@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerGamepadPosition : MonoBehaviour
+public class GamepadPointerManager : MonoBehaviour
 {
     public RectTransform pointerTransform;
     public float pointerSpeed = 500f;
@@ -49,7 +49,6 @@ public class PlayerGamepadPosition : MonoBehaviour
     {
         if (context.performed)
         {
-            //Debug.Log("OASDKOAOS");
             // Pega a posição bruta do mouse diretamente da tela
             pointerPosition = context.ReadValue<Vector2>();
             isUsingGamepad = false;
@@ -77,7 +76,7 @@ public class PlayerGamepadPosition : MonoBehaviour
         pointerTransform.position = pointerPosition;
     }
 
-    public Vector2 GetPointerWorldPosition()
+    public Vector3 GetPointerWorldPosition()
     {
         return Camera.main.ScreenToWorldPoint(pointerPosition);
     }

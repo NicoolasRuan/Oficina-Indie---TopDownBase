@@ -1,12 +1,18 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.DualShock;
 
 public class PlayerBehavior : MonoBehaviour
 {
     EntityStats player_stats;
 
-    public string _player_inv_selection;
+    public int lastKey;
+
+    public bool playerInteraction;
+
+    //private Key lastKey;
 
     private void Start()
     {
@@ -27,10 +33,45 @@ public class PlayerBehavior : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
-
-    public void OnInventorySelectKeyboard(InputAction.CallbackContext context)
+    
+    public void OnInventoryController(InputAction.CallbackContext context)
     {
-        _player_inv_selection = context.control.displayName;
+
+        if (!context.performed) return;
+
+        switch (context.control.name)
+        {
+            case "leftShoulder":
+                lastKey = lastKey == 1 ? 4 : lastKey - 1;
+                break;
+
+            case "rightShoulder":
+                lastKey = lastKey == 4 ? 1 : lastKey + 1;
+                break;
+
+            case "1":
+                lastKey = 1;
+                break;
+
+            case "2":
+                lastKey = 2;
+                break;
+
+            case "3":
+                lastKey = 3;
+                break;
+
+            case "4":
+                lastKey = 4;
+                break;
+        }
+
     }
 
+
+    public void OnInteraction(InputAction.CallbackContext context)
+    {
+        //Debug.Log("Apertou: " + context.performed);
+        playerInteraction = context.performed;
+    }
 }

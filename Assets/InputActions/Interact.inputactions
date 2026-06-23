@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Interact",
+    "maps": [
+        {
+            "name": "StoreInteract",
+            "id": "a2956536-86ba-4ac6-b61a-aae49d928203",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "48702780-71ff-4f5f-a524-f9a9595a11ba",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d6d73da5-e39b-4f81-820d-7ba8582fde81",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

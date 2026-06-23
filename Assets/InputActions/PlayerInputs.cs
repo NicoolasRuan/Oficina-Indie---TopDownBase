@@ -129,10 +129,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""InventorySelectKeyboard"",
-                    ""type"": ""Value"",
-                    ""id"": ""d0947611-c2f0-4e3c-b735-853ae7d2f1b9"",
-                    ""expectedControlType"": ""Integer"",
+                    ""name"": ""InventoryController"",
+                    ""type"": ""Button"",
+                    ""id"": ""be40e90a-5bd7-4ae7-be9e-f1fcaa591f21"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -219,7 +219,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3c62a912-7663-4fee-be2b-cc04d06cfe63"",
-                    ""path"": ""<DualShockGamepad>/rightShoulder"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -251,34 +251,67 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a40ed253-a54a-4962-b9e2-dbb654615e2c"",
-                    ""path"": ""<Keyboard>/0"",
+                    ""id"": ""c4c2a387-a9b7-4f84-b36a-1b5d39b32f50"",
+                    ""path"": ""<DualShockGamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InventorySelectKeyboard"",
+                    ""action"": ""InventoryController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5b28c93e-b156-4564-a489-7517e1ce0d31"",
+                    ""id"": ""492631bd-8cdd-41b5-a56b-8b1cd15cfc41"",
+                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryController"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbad009b-6fb4-435d-9dbe-023d00aed107"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InventorySelectKeyboard"",
+                    ""action"": ""InventoryController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9c809424-9fce-4486-a22b-378d754bbca9"",
+                    ""id"": ""88feb2e0-1946-49a1-8696-92e5ba8a5b1b"",
                     ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InventorySelectKeyboard"",
+                    ""action"": ""InventoryController"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1bda6f85-9769-49a0-9f50-26d4d95fb27b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryController"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8817643-248e-4e21-9d74-b29a570289fa"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -293,7 +326,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerControls_Attack = m_PlayerControls.FindAction("Attack", throwIfNotFound: true);
         m_PlayerControls_LookMouse = m_PlayerControls.FindAction("LookMouse", throwIfNotFound: true);
         m_PlayerControls_LookGamePad = m_PlayerControls.FindAction("LookGamePad", throwIfNotFound: true);
-        m_PlayerControls_InventorySelectKeyboard = m_PlayerControls.FindAction("InventorySelectKeyboard", throwIfNotFound: true);
+        m_PlayerControls_InventoryController = m_PlayerControls.FindAction("InventoryController", throwIfNotFound: true);
     }
 
     ~@PlayerInputs()
@@ -378,7 +411,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_Attack;
     private readonly InputAction m_PlayerControls_LookMouse;
     private readonly InputAction m_PlayerControls_LookGamePad;
-    private readonly InputAction m_PlayerControls_InventorySelectKeyboard;
+    private readonly InputAction m_PlayerControls_InventoryController;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerControls".
     /// </summary>
@@ -407,9 +440,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @LookGamePad => m_Wrapper.m_PlayerControls_LookGamePad;
         /// <summary>
-        /// Provides access to the underlying input action "PlayerControls/InventorySelectKeyboard".
+        /// Provides access to the underlying input action "PlayerControls/InventoryController".
         /// </summary>
-        public InputAction @InventorySelectKeyboard => m_Wrapper.m_PlayerControls_InventorySelectKeyboard;
+        public InputAction @InventoryController => m_Wrapper.m_PlayerControls_InventoryController;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -448,9 +481,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @LookGamePad.started += instance.OnLookGamePad;
             @LookGamePad.performed += instance.OnLookGamePad;
             @LookGamePad.canceled += instance.OnLookGamePad;
-            @InventorySelectKeyboard.started += instance.OnInventorySelectKeyboard;
-            @InventorySelectKeyboard.performed += instance.OnInventorySelectKeyboard;
-            @InventorySelectKeyboard.canceled += instance.OnInventorySelectKeyboard;
+            @InventoryController.started += instance.OnInventoryController;
+            @InventoryController.performed += instance.OnInventoryController;
+            @InventoryController.canceled += instance.OnInventoryController;
         }
 
         /// <summary>
@@ -474,9 +507,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @LookGamePad.started -= instance.OnLookGamePad;
             @LookGamePad.performed -= instance.OnLookGamePad;
             @LookGamePad.canceled -= instance.OnLookGamePad;
-            @InventorySelectKeyboard.started -= instance.OnInventorySelectKeyboard;
-            @InventorySelectKeyboard.performed -= instance.OnInventorySelectKeyboard;
-            @InventorySelectKeyboard.canceled -= instance.OnInventorySelectKeyboard;
+            @InventoryController.started -= instance.OnInventoryController;
+            @InventoryController.performed -= instance.OnInventoryController;
+            @InventoryController.canceled -= instance.OnInventoryController;
         }
 
         /// <summary>
@@ -546,11 +579,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLookGamePad(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "InventorySelectKeyboard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "InventoryController" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInventorySelectKeyboard(InputAction.CallbackContext context);
+        void OnInventoryController(InputAction.CallbackContext context);
     }
 }

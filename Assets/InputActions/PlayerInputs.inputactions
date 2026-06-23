@@ -43,10 +43,10 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "InventorySelectKeyboard",
-                    "type": "Value",
-                    "id": "d0947611-c2f0-4e3c-b735-853ae7d2f1b9",
-                    "expectedControlType": "Integer",
+                    "name": "InventoryController",
+                    "type": "Button",
+                    "id": "be40e90a-5bd7-4ae7-be9e-f1fcaa591f21",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -133,7 +133,7 @@
                 {
                     "name": "",
                     "id": "3c62a912-7663-4fee-be2b-cc04d06cfe63",
-                    "path": "<DualShockGamepad>/rightShoulder",
+                    "path": "<DualShockGamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -165,34 +165,67 @@
                 },
                 {
                     "name": "",
-                    "id": "a40ed253-a54a-4962-b9e2-dbb654615e2c",
-                    "path": "<Keyboard>/0",
+                    "id": "c4c2a387-a9b7-4f84-b36a-1b5d39b32f50",
+                    "path": "<DualShockGamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "InventorySelectKeyboard",
+                    "action": "InventoryController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "5b28c93e-b156-4564-a489-7517e1ce0d31",
+                    "id": "492631bd-8cdd-41b5-a56b-8b1cd15cfc41",
+                    "path": "<DualShockGamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryController",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbad009b-6fb4-435d-9dbe-023d00aed107",
                     "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "InventorySelectKeyboard",
+                    "action": "InventoryController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9c809424-9fce-4486-a22b-378d754bbca9",
+                    "id": "88feb2e0-1946-49a1-8696-92e5ba8a5b1b",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "InventorySelectKeyboard",
+                    "action": "InventoryController",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bda6f85-9769-49a0-9f50-26d4d95fb27b",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryController",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8817643-248e-4e21-9d74-b29a570289fa",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

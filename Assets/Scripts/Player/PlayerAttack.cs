@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         //Attack();
         CoolDown();
 
-        if(isAttacking && can_attack)
+        if(isAttacking && can_attack && !GameManager.instance.isStoreOpen)
         {
             Attack();
         }
@@ -49,7 +49,8 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         
-        Vector3 mouseWorldPosition = gamepadPointer.GetPointerWorldPosition();
+        Vector3 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         mouseWorldPosition.z = 0f;
             
 

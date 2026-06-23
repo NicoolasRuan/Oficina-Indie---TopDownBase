@@ -17,3 +17,5 @@ MonoBehaviour:
   weapon_range: 0.5
   weapon_cooldown: 0.1
   weapon_icon: {fileID: 698664279297640794, guid: c8c6421c12aa36a449dffa8b5dff1246, type: 3}
+  weapon_name: Dagger
+  weapon_price: 5

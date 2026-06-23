@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eed24105da1836e4f92d59841094c86e, type: 3}
-  m_Name: Sword
+  m_Name: Sickle
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  weapon_damage: 2
-  weapon_speed: 4
-  weapon_range: 2
-  weapon_cooldown: 0.5
-  weapon_icon: {fileID: 1098179606456428539, guid: c8c6421c12aa36a449dffa8b5dff1246, type: 3}
-  weapon_name: Sword
-  weapon_price: 10
+  weapon_damage: 15
+  weapon_speed: 0.3
+  weapon_range: 3
+  weapon_cooldown: 0.2
+  weapon_icon: {fileID: 5956946754449639209, guid: c8c6421c12aa36a449dffa8b5dff1246, type: 3}
+  weapon_name: Stickle
+  weapon_price: 99

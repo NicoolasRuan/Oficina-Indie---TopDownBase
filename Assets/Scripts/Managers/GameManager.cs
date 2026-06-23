@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
+    public bool isStoreOpen;
 
     private void Awake()
     {
@@ -17,5 +18,21 @@ public class GameManager : MonoBehaviour
         // Define a instância global
         instance = this;
 
+    }
+
+    private void Start()
+    {
+        isStoreOpen = false;
+    }
+
+    private void Update()
+    {
+        if(isStoreOpen)
+        {
+            Time.timeScale = 0f;
+        } else
+        {
+            Time.timeScale = 1f;
+        }
     }
 }
