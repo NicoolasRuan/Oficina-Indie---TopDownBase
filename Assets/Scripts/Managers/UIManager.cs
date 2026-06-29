@@ -48,11 +48,13 @@ public class UIManager : MonoBehaviour
     public void OpenStore()
     {
         isStoreOpen = true;
+        GameManager.instance.isStoreOpen = isStoreOpen;
         store_canvas.SetActive(true);
     }
     public void CloseStore()
     {
         isStoreOpen = false;
+        GameManager.instance.isStoreOpen = isStoreOpen;
         store_canvas.SetActive(false);
     }
 

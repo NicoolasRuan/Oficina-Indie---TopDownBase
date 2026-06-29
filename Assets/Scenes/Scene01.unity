@@ -1878,7 +1878,7 @@ MonoBehaviour:
   inv_background: {fileID: 632060428}
   inv_slot: {fileID: 1405862276298418541, guid: a92a62907cf65254ba9748df90648f20, type: 3}
   selected_slot: 0
-  gold_count: 0
+  gold_count: 40
   gold_text: {fileID: 658910016}
   inventory_:
   - {fileID: 11400000, guid: 8e5aaea8cc1bde04aa5cf1e00b9d6b28, type: 2}
